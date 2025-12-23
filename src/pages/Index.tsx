@@ -25,7 +25,7 @@ const Index = () => {
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
                 <Link to="/properties">Browse Properties</Link>
               </Button>
-              <Button asChild size="lg" variant="outline" className="text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10 text-lg px-8">
+              <Button asChild size="lg" variant="outline" className="bg-transparent text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10 text-lg px-8">
                 <Link to="/sell">Sell Your Land</Link>
               </Button>
             </div>
@@ -156,7 +156,7 @@ const Index = () => {
             <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground text-lg px-8">
               <Link to="/properties">View Properties</Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="border-accent-foreground text-accent-foreground hover:bg-accent-foreground/10 text-lg px-8">
+            <Button asChild size="lg" variant="outline" className="bg-transparent border-accent-foreground text-accent-foreground hover:bg-accent-foreground/10 text-lg px-8">
               <Link to="/sell">Sell Your Land</Link>
             </Button>
           </div>
