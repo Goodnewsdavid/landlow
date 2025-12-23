@@ -137,7 +137,11 @@ const Index = () => {
             </div>
 
             <div className="relative">
-              <div className="aspect-[4/3] bg-gradient-to-br from-accent/20 to-primary/20 rounded-2xl"></div>
+              <img 
+                src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=600&fit=crop" 
+                alt="Beautiful land property with scenic views" 
+                className="aspect-[4/3] w-full object-cover rounded-2xl shadow-lg"
+              />
             </div>
           </div>
         </div>
