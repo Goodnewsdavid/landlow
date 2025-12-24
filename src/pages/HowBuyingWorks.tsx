@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { SEO } from "@/components/SEO";
 
 const HowBuyingWorks = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="How Buying Works | Simple Land Buying Process | LandLow"
+        description="Learn how to buy land from LandLow with owner financing. Browse properties, reserve online, and own land without a bank."
+      />
       <Header />
       
       <main className="container mx-auto px-4 py-16">

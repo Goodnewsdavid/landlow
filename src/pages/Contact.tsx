@@ -1,18 +1,29 @@
 import { useState } from "react";
+import { Mail, MapPin, Phone } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Textarea } from "@/components/ui/textarea";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { SEO } from "@/components/SEO";
 import { useToast } from "@/hooks/use-toast";
+
+interface ContactFormData {
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+}
 
 const Contact = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<ContactFormData>({
     name: "",
     email: "",
     phone: "",
@@ -23,8 +34,8 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Message Sent!",
-      description: "We'll get back to you within 24 hours.",
+      title: "Thank you — we'll get back to you as soon as possible.",
+      description: "Your message has been received.",
     });
     setFormData({
       name: "",
@@ -35,12 +46,16 @@ const Contact = () => {
     });
   };
 
-  const handleChange = (field: string, value: string) => {
+  const handleChange = (field: keyof ContactFormData, value: string) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Contact LandLow | Talk with a Land Specialist"
+        description="Have questions about selling or buying land? Contact LandLow for fast, friendly support."
+      />
       <Header />
       
       {/* Hero */}
@@ -48,10 +63,10 @@ const Contact = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center animate-fade-in">
             <h1 className="text-4xl lg:text-5xl font-bold mb-4 font-montserrat">
-              Contact Us
+              Let's Talk Land
             </h1>
             <p className="text-xl opacity-95">
-              Have questions? We're here to help.
+              Whether you're looking to sell land, buy your next property, or just have questions about how it all works, we're here to help.
             </p>
           </div>
         </div>
@@ -106,9 +121,9 @@ const Contact = () => {
               </div>
 
               <div className="mt-8 p-6 bg-muted/30 rounded-lg">
-                <h3 className="font-semibold mb-2 font-montserrat">Response Time</h3>
+                <h3 className="font-semibold mb-2 font-montserrat">Operating Details</h3>
                 <p className="text-sm text-muted-foreground">
-                  We typically respond within 24 hours during business days. For urgent matters, please call us directly.
+                  LandLow — operated by One World Trading LLC. We operate remotely and work with landowners and buyers across multiple states.
                 </p>
               </div>
             </div>
@@ -144,10 +159,11 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <Label htmlFor="phone">Phone Number</Label>
+                    <Label htmlFor="phone">Phone Number *</Label>
                     <Input
                       id="phone"
                       type="tel"
+                      required
                       value={formData.phone}
                       onChange={(e) => handleChange("phone", e.target.value)}
                       placeholder="(555) 123-4567"
@@ -155,18 +171,16 @@ const Contact = () => {
                   </div>
 
                   <div>
-                    <Label htmlFor="subject">What can we help with? *</Label>
+                    <Label htmlFor="subject">What are you interested in? *</Label>
                     <Select value={formData.subject} onValueChange={(value) => handleChange("subject", value)}>
                       <SelectTrigger>
                         <SelectValue placeholder="Select a topic" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="buying">Buying Land</SelectItem>
-                        <SelectItem value="selling">Selling Land</SelectItem>
-                        <SelectItem value="financing">Financing Questions</SelectItem>
-                        <SelectItem value="property">Specific Property Question</SelectItem>
-                        <SelectItem value="general">General Inquiry</SelectItem>
-                        <SelectItem value="other">Other</SelectItem>
+                        <SelectItem value="selling">Selling my land</SelectItem>
+                        <SelectItem value="buying">Buying land</SelectItem>
+                        <SelectItem value="financing">Financing questions</SelectItem>
+                        <SelectItem value="general">General question</SelectItem>
                       </SelectContent>
                     </Select>
                   </div>

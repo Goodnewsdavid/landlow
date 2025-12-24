@@ -1,10 +1,16 @@
+import { Link } from "react-router-dom";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 
 const Reserve = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Reserve a Property | Secure Online Checkout | LandLow"
+        description="Reserve your land property with secure online checkout. Pay your down payment and lock in your property today."
+      />
       <Header />
       
       <main className="container mx-auto px-4 py-16">

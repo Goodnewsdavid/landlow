@@ -20,6 +20,7 @@ import HowSellingWorks from "./pages/HowSellingWorks";
 import WhySellToUs from "./pages/WhySellToUs";
 import HowBuyingWorks from "./pages/HowBuyingWorks";
 import Reserve from "./pages/Reserve";
+import Checkout from "./pages/Checkout";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/why-sell-to-us" element={<WhySellToUs />} />
           <Route path="/how-buying-works" element={<HowBuyingWorks />} />
           <Route path="/reserve" element={<Reserve />} />
+          <Route path="/checkout/:id" element={<Checkout />} />
           <Route path="/mission" element={<Navigate to="/about" replace />} />
           
           <Route path="*" element={<NotFound />} />

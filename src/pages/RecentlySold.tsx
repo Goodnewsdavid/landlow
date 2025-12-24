@@ -1,12 +1,25 @@
 import { Link } from "react-router-dom";
+import { Calendar, DollarSign, MapPin } from "lucide-react";
+
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { MapPin, Calendar, DollarSign } from "lucide-react";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { SEO } from "@/components/SEO";
 
-const recentlySoldProperties = [
+interface SoldProperty {
+  id: number;
+  title: string;
+  location: string;
+  acres: number;
+  soldPrice: number;
+  soldDate: string;
+  image: string;
+}
+
+const recentlySoldProperties: SoldProperty[] = [
   {
     id: 1,
     title: "15 Acres in Apache County",
@@ -66,6 +79,10 @@ const recentlySoldProperties = [
 const RecentlySold = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Recently Sold Land Deals | LandLow"
+        description="See examples of land parcels recently sold through LandLow."
+      />
       <Header />
       
       <main className="container mx-auto px-4 py-16">

@@ -122,13 +122,13 @@ const Header = () => {
                           </Link>
                         </NavigationMenuLink>
                       </li>
-                      <li>
+                      {/* <li>
                         <NavigationMenuLink asChild>
                           <Link to="/mission" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/10">
                             <div className="text-sm font-medium">Our Mission & Values</div>
                           </Link>
                         </NavigationMenuLink>
-                      </li>
+                      </li> */}
                       <li>
                         <NavigationMenuLink asChild>
                           <Link to="/environmental-impact" className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent/10">

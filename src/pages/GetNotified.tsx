@@ -1,14 +1,24 @@
 import { useState } from "react";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
+
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
+import { SEO } from "@/components/SEO";
 import { useToast } from "@/hooks/use-toast";
+
+interface NotificationFormData {
+  name: string;
+  email: string;
+  states: string;
+  budget: string;
+}
 
 const GetNotified = () => {
   const { toast } = useToast();
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<NotificationFormData>({
     name: "",
     email: "",
     states: "",
@@ -26,6 +36,10 @@ const GetNotified = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Get Notified About New Land Deals | LandLow"
+        description="Sign up to get email alerts for new land listings, price drops, and special owner-financing offers."
+      />
       <Header />
       
       <main className="container mx-auto px-4 py-16">

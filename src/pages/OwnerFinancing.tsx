@@ -1,11 +1,17 @@
 import { Link } from "react-router-dom";
+import { CheckCircle2 } from "lucide-react";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { CheckCircle2 } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const OwnerFinancing = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Owner Financing | No Credit Check Land Financing | LandLow"
+        description="Own land without a bank. Simple owner financing with no credit checks, low down payments, and flexible terms."
+      />
       <Header />
       
       <main className="container mx-auto px-4 py-16">

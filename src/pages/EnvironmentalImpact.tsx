@@ -1,10 +1,16 @@
+import { TreePine } from "lucide-react";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { TreePine } from "lucide-react";
+import { SEO } from "@/components/SEO";
 
 const EnvironmentalImpact = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Environmental Impact | 5% Net Profit Reforestation Pledge | LandLow"
+        description="Discover how LandLow donates 5% of net profits annually to plant trees through One Tree Planted."
+      />
       <Header />
       
       <main className="container mx-auto px-4 py-16">
@@ -62,7 +68,7 @@ const EnvironmentalImpact = () => {
             <h2 className="text-3xl font-montserrat font-semibold text-foreground mb-6">
               Annual Impact Summary
             </h2>
-            <div className="bg-muted rounded-lg p-8">
+            <div className="bg-primary rounded-lg p-8">
               <p className="text-muted-foreground text-center">
                 Our first annual impact report will be published here after our first full year of operation.
               </p>

@@ -1,78 +1,22 @@
 import { Link } from "react-router-dom";
+import { MapPin } from "lucide-react";
+
+import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { MapPin } from "lucide-react";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-
-// Mock property data
-const properties = [
-  {
-    id: 1,
-    title: "10 Acres in Apache County",
-    location: "Apache County, Arizona",
-    acres: 10,
-    cashPrice: 12500,
-    monthlyPayment: 299,
-    downPayment: 2500,
-    featured: true,
-  },
-  {
-    id: 2,
-    title: "5 Acres in Elko County",
-    location: "Elko County, Nevada",
-    acres: 5,
-    cashPrice: 8900,
-    monthlyPayment: 219,
-    downPayment: 1900,
-    featured: false,
-  },
-  {
-    id: 3,
-    title: "20 Acres in Costilla County",
-    location: "Costilla County, Colorado",
-    acres: 20,
-    cashPrice: 24500,
-    monthlyPayment: 549,
-    downPayment: 4900,
-    featured: true,
-  },
-  {
-    id: 4,
-    title: "2.5 Acres in Mohave County",
-    location: "Mohave County, Arizona",
-    acres: 2.5,
-    cashPrice: 5900,
-    monthlyPayment: 149,
-    downPayment: 1200,
-    featured: false,
-  },
-  {
-    id: 5,
-    title: "40 Acres in Humboldt County",
-    location: "Humboldt County, Nevada",
-    acres: 40,
-    cashPrice: 39900,
-    monthlyPayment: 849,
-    downPayment: 7900,
-    featured: true,
-  },
-  {
-    id: 6,
-    title: "1 Acre in Luna County",
-    location: "Luna County, New Mexico",
-    acres: 1,
-    cashPrice: 2900,
-    monthlyPayment: 99,
-    downPayment: 600,
-    featured: false,
-  },
-];
+import { SEO } from "@/components/SEO";
+import { properties } from "@/data/properties";
 
 const Properties = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="Land for Sale | Affordable Rural Properties with Owner Financing | LandLow"
+        description="Browse affordable rural land for sale with clear pricing and simple owner financing. Reserve properties online with secure checkout."
+      />
       <Header />
       
       {/* Hero Section */}

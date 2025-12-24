@@ -1,11 +1,18 @@
 import { Link } from "react-router-dom";
+
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { SEO } from "@/components/SEO";
 
 const WhySellToUs = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Why Sell to LandLow | Fast Cash Offers, No Commissions"
+        description="Sell your land to LandLow for fast cash offers, no commissions, flexible closing options, and simple digital paperwork."
+      />
       <Header />
       
       <main className="container mx-auto px-4 py-16">

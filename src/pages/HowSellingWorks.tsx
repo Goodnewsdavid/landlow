@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import { SEO } from "@/components/SEO";
 
 const HowSellingWorks = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="How Selling Works | Simple Land Selling Process | LandLow"
+        description="Learn how to sell your land to LandLow with our simple 4-step process. Fast offers, no commissions, flexible closing options."
+      />
       <Header />
       
       <main className="container mx-auto px-4 py-16">
@@ -62,7 +68,7 @@ const HowSellingWorks = () => {
             </div>
           </div>
 
-          <div className="bg-muted rounded-lg p-6 mb-16">
+          <div className="bg-primary rounded-lg p-6 mb-16">
             <p className="text-sm text-muted-foreground">
               <strong>Legal note:</strong> In most cases, the buyer on your deed will appear as One World Trading LLC or an affiliated holding entity that owns LandLow.
             </p>

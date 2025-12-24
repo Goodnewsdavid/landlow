@@ -1,12 +1,18 @@
-import { CheckCircle } from "lucide-react";
+import { Link } from "react-router-dom";
+
+import { Button } from "@/components/ui/button";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { SEO } from "@/components/SEO";
 
 const About = () => {
   return (
     <div className="min-h-screen flex flex-col">
+      <SEO 
+        title="About LandLow | Modern Land Platform Backed by One World Trading LLC"
+        description="Learn how LandLow simplifies buying and selling land with transparent pricing, flexible closing options, and a 5% net profit reforestation pledge."
+      />
       <Header />
       
       {/* Hero */}
@@ -23,65 +29,89 @@ const About = () => {
         </div>
       </section>
 
-      {/* Mission */}
+      {/* Section 1 — Mission */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-center font-montserrat">Our Mission</h2>
-            <p className="text-lg text-muted-foreground text-center mb-12">
+            <p className="text-lg text-muted-foreground text-center">
               At LandLow, we believe everyone deserves a shot at owning land. Whether you're building, investing, or just want a place to breathe, we make land ownership simple, affordable, and accessible through clear pricing and easy processes.
             </p>
+          </div>
+        </div>
+      </section>
 
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-lg font-montserrat">Transparent Pricing</h3>
-                    <p className="text-muted-foreground">No hidden fees, no games. What you see is what you pay.</p>
-                  </div>
-                </div>
+      {/* Section 2 — Our Story */}
+      <section className="py-20 bg-muted/20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-center font-montserrat">Our Story</h2>
+            <div className="space-y-4 text-lg text-muted-foreground">
+              <p>
+                LandLow was created to fix a common problem: buying and selling land often feels confusing, slow, and full of hidden details. We set out to build a more modern, honest way to work with land.
+              </p>
+              <p>
+                Today, we help landowners sell quickly without the hassle of listings or agents and we help buyers secure affordable properties with straightforward pricing and simple financing.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-lg font-montserrat">Owner Financing</h3>
-                    <p className="text-muted-foreground">Low down payments, flexible terms, no credit checks required.</p>
-                  </div>
-                </div>
-
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-lg font-montserrat">Fast Process</h3>
-                    <p className="text-muted-foreground">Reserve online, close quickly. We handle all the paperwork.</p>
-                  </div>
+      {/* Section 3 — What Makes Us Different */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center font-montserrat">What Makes Us Different</h2>
+            
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 font-montserrat">Modern & Tech-Forward</h3>
+                  <p className="text-muted-foreground">
+                    We use modern tools, online signatures, digital payments, and clear online property pages.
+                  </p>
                 </div>
               </div>
 
-              <div className="space-y-4">
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-lg font-montserrat">Environmental Commitment</h3>
-                    <p className="text-muted-foreground">5% of net profits support land conservation efforts.</p>
-                  </div>
+              <div className="flex items-start gap-4">
+                <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 font-montserrat">Fast Response & Clear Answers</h3>
+                  <p className="text-muted-foreground">
+                    No waiting weeks for a reply. We get you answers and offers as quickly as possible.
+                  </p>
                 </div>
+              </div>
 
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-lg font-montserrat">Expert Support</h3>
-                    <p className="text-muted-foreground">Real people ready to answer your questions and guide you.</p>
-                  </div>
+              <div className="flex items-start gap-4">
+                <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 font-montserrat">Simple, Transparent Pricing</h3>
+                  <p className="text-muted-foreground">
+                    No surprise fees. No confusing terms. Just clear numbers from the beginning.
+                  </p>
                 </div>
+              </div>
 
-                <div className="flex items-start space-x-3">
-                  <CheckCircle className="w-6 h-6 text-accent flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-lg font-montserrat">Licensed & Legal</h3>
-                    <p className="text-muted-foreground">All transactions through One World Trading LLC with proper licensing.</p>
-                  </div>
+              <div className="flex items-start gap-4">
+                <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 font-montserrat">Tough Parcels Welcome</h3>
+                  <p className="text-muted-foreground">
+                    We look at properties with access challenges, back taxes, probate, or other issues that many buyers avoid.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 font-montserrat">Owner Financing Available</h3>
+                  <p className="text-muted-foreground">
+                    Many of our properties include simple, no-credit-check payment plans.
+                  </p>
                 </div>
               </div>
             </div>
@@ -89,36 +119,99 @@ const About = () => {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Section 4 — Our Values */}
       <section className="py-20 bg-muted/20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl lg:text-4xl font-bold mb-12 text-center font-montserrat">Our Values</h2>
             
-            <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl font-bold text-accent">1</span>
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 font-montserrat">Trustworthiness</h3>
+                  <p className="text-muted-foreground">
+                    We say what we mean and do what we say.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 font-montserrat">Simplicity</h3>
-                <p className="text-muted-foreground">We cut through complexity and make land ownership straightforward and accessible.</p>
               </div>
 
-              <div className="text-center">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl font-bold text-accent">2</span>
+              <div className="flex items-start gap-4">
+                <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 font-montserrat">Simplicity</h3>
+                  <p className="text-muted-foreground">
+                    We strip away the jargon and make things easy to understand.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 font-montserrat">Trust</h3>
-                <p className="text-muted-foreground">Clear communication, honest pricing, and transparent processes build lasting relationships.</p>
               </div>
 
-              <div className="text-center">
-                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl font-bold text-accent">3</span>
+              <div className="flex items-start gap-4">
+                <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 font-montserrat">Speed</h3>
+                  <p className="text-muted-foreground">
+                    We respect your time and move with purpose.
+                  </p>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 font-montserrat">Impact</h3>
-                <p className="text-muted-foreground">Every transaction supports environmental conservation and sustainable land use.</p>
               </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 font-montserrat">Innovation</h3>
+                  <p className="text-muted-foreground">
+                    We're always improving how we evaluate, present, and deliver land deals.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0" />
+                <div>
+                  <h3 className="text-xl font-semibold mb-2 font-montserrat">Helpfulness</h3>
+                  <p className="text-muted-foreground">
+                    We want every interaction to feel clear, respectful, and useful.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 5 — Ownership & Legal Structure */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-center font-montserrat">Ownership & Legal Structure</h2>
+            <p className="text-lg text-muted-foreground text-center">
+              LandLow is the customer-facing brand owned and operated by One World Trading LLC. In many cases, One World Trading LLC or an affiliated holding entity will appear as the buyer or seller of record on your deed and closing documents. Your experience, communication, and support are always handled by the LandLow team.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 6 — Environmental Impact */}
+      <section className="py-20 bg-muted/20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 text-center font-montserrat">Environmental Impact</h2>
+            <div className="space-y-4 text-lg text-muted-foreground">
+              <p>
+                Land matters not just for ownership, but for the planet. That's why LandLow donates 5% of our net profits each year to plant trees through One Tree Planted.
+              </p>
+              <p>
+                Each dollar funds new trees in areas that need reforestation, helping restore ecosystems, support wildlife habitats, and improve long-term land health.
+              </p>
+              <p>
+                At the end of each year, we publish a simple summary on our website so you can see the impact your land deals helped create including our total donation and the estimated number of trees funded.
+              </p>
+            </div>
+            <div className="mt-8 text-center">
+              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground">
+                <Link to="/environmental-impact">Learn More About Our Impact</Link>
+              </Button>
             </div>
           </div>
         </div>

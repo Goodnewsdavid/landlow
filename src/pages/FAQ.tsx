@@ -1,13 +1,18 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
+
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import { ChevronDown } from "lucide-react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { SEO } from "@/components/SEO";
 
 const FAQ = () => {
   return (
     <div className="min-h-screen bg-background">
+      <SEO 
+        title="Land Buying & Selling FAQ | LandLow"
+        description="Answers to common questions about selling land, buying land, owner financing, deeds, and how LandLow works."
+      />
       <Header />
       
       <main className="container mx-auto px-4 py-16">
