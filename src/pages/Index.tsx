@@ -10,7 +10,7 @@ const Index = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Header />
-      
+
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-primary via-primary to-primary/90 text-primary-foreground py-24 lg:py-32">
         <div className="container mx-auto px-4">
@@ -19,11 +19,12 @@ const Index = () => {
               Own Land. Build Your Future.
             </h1>
             <p className="text-xl lg:text-2xl mb-8 opacity-95">
-              At LandLow, we believe everyone deserves a shot at owning land. Whether you're building, investing, or just want a place to breathe, we make land ownership simple, affordable, and accessible.
-            </p>
+              At LandLow, we believe everyone deserves a shot at owning land. Whether you’re
+              selling, investing, or planning for the future, we make land ownership simple, affordable,
+              and accessible through clear pricing and easy processes.</p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground text-lg px-8">
-                <Link to="/properties">Browse Properties</Link>
+                <Link to="/properties">View Properties</Link>
               </Button>
               <Button asChild size="lg" variant="outline" className="bg-transparent text-primary-foreground border-primary-foreground hover:bg-primary-foreground/10 text-lg px-8">
                 <Link to="/sell">Sell Your Land</Link>
@@ -137,9 +138,9 @@ const Index = () => {
             </div>
 
             <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=600&fit=crop" 
-                alt="Beautiful land property with scenic views" 
+              <img
+                src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?w=800&h=600&fit=crop"
+                alt="Beautiful land property with scenic views"
                 className="aspect-[4/3] w-full object-cover rounded-2xl shadow-lg"
               />
             </div>
