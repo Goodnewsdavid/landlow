@@ -1,9 +1,18 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { MapPin } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -11,6 +20,37 @@ import { SEO } from "@/components/SEO";
 import { properties } from "@/data/properties";
 
 const Properties = () => {
+  const [currentPage, setCurrentPage] = useState(1);
+  const propertiesPerPage = 6;
+  
+  // Safety check
+  if (!properties || properties.length === 0) {
+    return (
+      <div className="min-h-screen flex flex-col">
+        <SEO 
+          title="Land for Sale | Affordable Rural Properties with Owner Financing | LandLow"
+          description="Browse affordable rural land for sale with clear pricing and simple owner financing."
+        />
+        <Header />
+        <main className="container mx-auto px-4 py-16 text-center">
+          <p>No properties available at this time.</p>
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+  
+  const totalPages = Math.ceil(properties.length / propertiesPerPage);
+
+  const startIndex = (currentPage - 1) * propertiesPerPage;
+  const endIndex = startIndex + propertiesPerPage;
+  const currentProperties = (properties || []).slice(startIndex, endIndex);
+
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <div className="min-h-screen flex flex-col">
       <SEO 
@@ -36,10 +76,20 @@ const Properties = () => {
       {/* Properties Grid */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {properties.map((property) => (
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {currentProperties.map((property) => (
               <Card key={property.id} className="overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="aspect-[4/3] bg-gradient-to-br from-muted to-muted/50 relative">
+                <div className="aspect-[4/3] bg-gradient-to-br from-muted to-muted/50 relative overflow-hidden">
+                  {property.images && property.images.length > 0 && property.images[0] ? (
+                    <img 
+                      src={property.images[0]} 
+                      alt={property.title}
+                      className="w-full h-full object-cover"
+                      onError={(e) => {
+                        (e.target as HTMLImageElement).style.display = "none";
+                      }}
+                    />
+                  ) : null}
                   {property.featured && (
                     <Badge className="absolute top-4 right-4 bg-accent text-accent-foreground">
                       Featured
@@ -79,6 +129,53 @@ const Properties = () => {
               </Card>
             ))}
           </div>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <Pagination>
+              <PaginationContent>
+                <PaginationItem>
+                  <PaginationPrevious 
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (currentPage > 1) {
+                        handlePageChange(currentPage - 1);
+                      }
+                    }}
+                    className={currentPage === 1 ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                  />
+                </PaginationItem>
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                  <PaginationItem key={page}>
+                    <PaginationLink
+                      href="#"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handlePageChange(page);
+                      }}
+                      isActive={currentPage === page}
+                      className="cursor-pointer"
+                    >
+                      {page}
+                    </PaginationLink>
+                  </PaginationItem>
+                ))}
+                <PaginationItem>
+                  <PaginationNext 
+                    href="#"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (currentPage < totalPages) {
+                        handlePageChange(currentPage + 1);
+                      }
+                    }}
+                    className={currentPage === totalPages ? "pointer-events-none opacity-50" : "cursor-pointer"}
+                  />
+                </PaginationItem>
+              </PaginationContent>
+            </Pagination>
+          )}
         </div>
       </section>
 
